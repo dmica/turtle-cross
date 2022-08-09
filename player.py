@@ -25,4 +25,4 @@ class Player(Turtle):
             False
 
     def go_to_start(self):
-        self.goto(STARTING_POSITION)  
+        self.goto(STARTING_POSITION)
