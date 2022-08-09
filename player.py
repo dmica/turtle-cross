@@ -6,16 +6,23 @@ FINISH_LINE_Y = 280
 
 
 class Player(Turtle):
-  def __init__(self):
-    super().__init__()
-    self.shape("turtle")
-    self.color("black")
-    self.setheading(90)
-    self.penup()
-    self.goto(STARTING_POSITION)
+    def __init__(self):
+        super().__init__()
+        self.shape("turtle")
+        self.color("black")
+        self.setheading(90)
+        self.penup()
+        self.go_to_start()
 
-  def go_up(self):
+    def go_up(self):
         new_y = self.ycor() + 20
         self.goto(self.xcor(), new_y)
 
-    
+    def finish_line(self):
+        if self.ycor() > FINISH_LINE_Y:
+            return True
+        else:
+            False
+
+    def go_to_start(self):
+        self.goto(STARTING_POSITION)  
